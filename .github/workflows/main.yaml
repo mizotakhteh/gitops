@@ -1,0 +1,13 @@
+name: Main
+on: push
+
+jobs:
+  prod-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions-hub/kubectl@master
+        env:
+          KUBE_CONFIG: ${{ secrets.KUBE_CONF }}
+        with:
+          args: --context outi get pods -A
