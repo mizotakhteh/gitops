@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: book
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - book.outi.ir
+      secretName: book
+  rules:
+    - host: book.outi.ir
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: book
+                port:
+                  number: 8080
