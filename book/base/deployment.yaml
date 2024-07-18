@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: book
-          image: backendd/mizotakhteh.book:1-cicd
+          image: backendd/mizotakhteh.book:latest
           imagePullPolicy: Always
           envFrom:
             - configMapRef:
