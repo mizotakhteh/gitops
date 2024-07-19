@@ -5,7 +5,7 @@ namespace: mizotakhteh
 
 images:
   - name: backendd/mizotakhteh.book
-    newTag: 1-cicd
+    newTag: dev-c5346ea
 
 resources:
   - namespace.yaml
