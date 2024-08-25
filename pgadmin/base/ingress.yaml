@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: book
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - pgadmin.outi.ir
+      secretName: pgadmin
+  rules:
+    - host: pgadmin.outi.ir
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: pgadmin
+                port:
+                  number: 80

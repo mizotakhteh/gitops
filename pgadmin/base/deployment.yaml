@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pgadmin
+spec:
+  revisionHistoryLimit: 0
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pgadmin
+  template:
+    metadata:
+      labels:
+        app: pgadmin
+    spec:
+      containers:
+        - name: book
+          image: dpage/pgadmin4:latest
+          imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: pgadmin
+          ports:
+            - name: http
+              containerPort: 80
+          resources:
+            limits:
+              cpu: 100m
+              memory: 100Mi
+            requests:
+              cpu: 0m
+              memory: 0Mi

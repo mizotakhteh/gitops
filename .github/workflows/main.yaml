@@ -10,6 +10,7 @@ jobs:
       matrix:
         app:
           - postgres
+          - pgadmin
           - book
     runs-on: ubuntu-latest
     steps:
