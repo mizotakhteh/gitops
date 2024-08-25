@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: book
+  name: postgres
   labels:
-    app: book
+    app: postgres
 spec:
   type: ClusterIP
   ports:
