@@ -9,6 +9,7 @@ jobs:
     strategy:
       matrix:
         app:
+          - postgres
           - book
     runs-on: ubuntu-latest
     steps:
