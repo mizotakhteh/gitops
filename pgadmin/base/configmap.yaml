@@ -3,4 +3,5 @@ kind: ConfigMap
 metadata:
   name: pgadmin
 data:
-  DEBUG: "true"
+  PGADMIN_DEFAULT_EMAIL: "hasankarimi.dev@gmail.com"
+  PGADMIN_LISTEN_ADDRESS: "0.0.0.0"
