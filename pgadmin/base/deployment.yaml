@@ -14,7 +14,7 @@ spec:
         app: pgadmin
     spec:
       containers:
-        - name: book
+        - name: pgadmin
           image: dpage/pgadmin4:latest
           imagePullPolicy: Always
           envFrom:
