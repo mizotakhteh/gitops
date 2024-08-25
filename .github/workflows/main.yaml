@@ -6,6 +6,10 @@ on:
 
 jobs:
   prod-deploy:
+    strategy:
+      matrix:
+        app:
+          - book
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -13,4 +17,4 @@ jobs:
         env:
           KUBE_CONFIG: ${{ secrets.KUBE_CONF }}
         with:
-          args: --context outi apply -k book/overlays/dev
+          args: --context outi apply -k ${{ matrix.app }}/overlays/dev
